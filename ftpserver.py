@@ -1,9 +1,18 @@
 import os
 import socket
+import sys
 from threading import Thread
 
 HOST = "127.0.0.1"
-PORT = 5009
+
+usage = "Run the script: ./ftpserver.py PORT"
+
+if len(sys.argv) != 2:
+    print(usage)
+    sys.exit(0)
+
+if len(sys.argv) > 1:
+    PORT = int(sys.argv[1])
 
 
 def create_socket():
